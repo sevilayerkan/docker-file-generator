@@ -1,0 +1,51 @@
+{
+    "web": {
+        "image": "nginx",
+        "ports": [
+            "80:80"
+        ]
+    },
+    "auth": {
+        "image": "auth-service",
+        "ports": [
+            "8080:8080"
+        ],
+        "environment": {
+            "DB_HOST": "db",
+            "DB_PORT": "5432",
+            "DB_USER": "auth_user",
+            "DB_PASSWORD": "auth_password",
+            "DB_NAME": "auth_db"
+        },
+        "depends_on": [
+            "db"
+        ]
+    },
+    "user": {
+        "image": "user-service",
+        "ports": [
+            "8081:8081"
+        ],
+        "environment": {
+            "DB_HOST": "db",
+            "DB_PORT": "5432",
+            "DB_USER": "user_user",
+            "DB_PASSWORD": "user_password",
+            "DB_NAME": "user_db"
+        },
+        "depends_on": [
+            "db"
+        ]
+    },
+    "db": {
+        "image": "postgres",
+        "ports": [
+            "5432:5432"
+        ],
+        "environment": {
+            "POSTGRES_USER": "flask",
+            "POSTGRES_PASSWORD": "flask123",
+            "POSTGRES_DB": "flask_db"
+        }
+    }
+}

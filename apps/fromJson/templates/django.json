@@ -1,0 +1,37 @@
+{
+    "db": {
+        "image": "postgres:13-alpine",
+        "ports": [
+            "5432:5432"
+        ],
+        "environment": [
+            "POSTGRES_USER=postgres",
+            "POSTGRES_PASSWORD=secret",
+            "POSTGRES_DB=mydb"
+        ],
+        "volumes": [
+            "./pgdata:/var/lib/postgresql/data"
+        ]
+    },
+    "web": {
+        "image": "python:3.9-alpine",
+        "ports": [
+            "8000:8000"
+        ],
+        "working_dir": "/app",
+        "volumes": [
+            "./app:/app"
+        ],
+        "command": "python manage.py runserver 0.0.0.0:8000",
+        "depends_on": [
+            "db"
+        ],
+        "environment": [
+            "DB_HOST=db",
+            "DB_PORT=5432",
+            "DB_NAME=mydb",
+            "DB_USER=postgres",
+            "DB_PASSWORD=secret"
+        ]
+    }
+}

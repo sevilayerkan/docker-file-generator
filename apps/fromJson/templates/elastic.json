@@ -1,0 +1,14 @@
+{
+    "elasticsearch": {
+        "image": "elasticsearch:latest",
+        "ports": [
+            "9200:9200"
+        ],
+        "environment": [
+            "discovery.type=single-node"
+        ],
+        "volumes": [
+            "./data:/usr/share/elasticsearch/data"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "web": {
+        "image": "php:apache",
+        "ports": [
+            "80:80"
+        ],
+        "volumes": [
+            "./html:/var/www/html"
+        ]
+    }
+}

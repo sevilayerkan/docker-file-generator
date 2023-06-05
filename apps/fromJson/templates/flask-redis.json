@@ -1,0 +1,27 @@
+{
+    "web": {
+        "image": "nginx",
+        "ports": [
+            "80:80"
+        ]
+    },
+    "app": {
+        "image": "myapp",
+        "ports": [
+            "5000:5000"
+        ],
+        "environment": {
+            "REDIS_HOST": "redis",
+            "REDIS_PORT": "6379"
+        },
+        "depends_on": [
+            "redis"
+        ]
+    },
+    "redis": {
+        "image": "redis",
+        "ports": [
+            "6379:6379"
+        ]
+    }
+}

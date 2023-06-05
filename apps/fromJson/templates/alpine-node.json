@@ -1,0 +1,13 @@
+{
+    "app": {
+        "image": "node:alpine",
+        "ports": [
+            "3000:3000"
+        ],
+        "working_dir": "/app",
+        "volumes": [
+            "./app:/app"
+        ],
+        "command": "npm start"
+    }
+}
