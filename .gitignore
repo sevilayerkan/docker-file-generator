@@ -1,3 +1,6 @@
+# Custom file locations for uploaded json files
+uploaded_jsons/
+
 # Byte-compiled / optimized files
 __pycache__/
 *.py[cod]

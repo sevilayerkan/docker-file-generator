@@ -1,29 +1,142 @@
+/* Global styles */
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
 }
 
+form {
+    margin-top: 20px;
+}
+
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 label {
     font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+select {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
     border: none;
+    border-radius: 3px;
     cursor: pointer;
+}
+
+.flash-messages {
+    margin-top: 20px;
+}
+
+.flash-message {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 3px;
+}
+
+.flash-message+.flash-message {
+    margin-top: 10px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Centering styles */
+body,
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    flex-direction: column;
+}
+
+a.return-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+select {
+    margin-top: 5px;
+}
+
+.error-messages {
+    color: red;
+    margin-bottom: 10px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+}
+
+.alert {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    color: #a94442;
 }
