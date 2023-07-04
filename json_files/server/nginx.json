@@ -1,0 +1,20 @@
+{
+    "web": {
+        "image": "nginx:latest",
+        "ports": [
+            "80:80"
+        ],
+        "volumes": [
+            "./nginx.conf:/etc/nginx/nginx.conf"
+        ],
+        "depends_on": [
+            "app"
+        ]
+    },
+    "app": {
+        "image": "app:latest",
+        "ports": [
+            "8080"
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "db": {
+        "image": "mysql:8.0-alpine",
+        "ports": [
+            "3306:3306"
+        ],
+        "environment": [
+            "MYSQL_ROOT_PASSWORD=secret",
+            "MYSQL_DATABASE=wordpress",
+            "MYSQL_USER=wpuser",
+            "MYSQL_PASSWORD=wppassword"
+        ],
+        "volumes": [
+            "./mysql:/var/lib/mysql"
+        ]
+    },
+    "wordpress": {
+        "image": "wordpress:5.7.2-php8.0-fpm-alpine",
+        "ports": [
+            "80:80"
+        ],
+        "environment": [
+            "WORDPRESS_DB_HOST=db",
+            "WORDPRESS_DB_USER=wpuser",
+            "WORDPRESS_DB_PASSWORD=wppassword",
+            "WORDPRESS_DB_NAME=wordpress"
+        ],
+        "depends_on": [
+            "db"
+        ],
+        "volumes": [
+            "./html:/var/www/html"
+        ]
+    }
+}

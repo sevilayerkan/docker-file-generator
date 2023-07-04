@@ -1,0 +1,17 @@
+{
+    "db": {
+        "image": "mysql:alpine",
+        "ports": [
+            "3306:3306"
+        ],
+        "environment": [
+            "MYSQL_ROOT_PASSWORD=secret",
+            "MYSQL_DATABASE=mydb",
+            "MYSQL_USER=myuser",
+            "MYSQL_PASSWORD=mypassword"
+        ],
+        "volumes": [
+            "./mysql:/var/lib/mysql"
+        ]
+    }
+}

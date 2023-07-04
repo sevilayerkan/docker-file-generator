@@ -1,0 +1,85 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Flask instance folder
+instance/
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+
+# Dependency directories
+venv/
+env/
+envs/
+ENV/
+
+# Development server logs
+*.log
+
+# Database files
+db.sqlite3
+*.db
+
+# IDE-specific files
+.idea/
+.vscode/
+*.pydevproject
+*.pydevprojectc
+*.pydevprojectw
+*.pydevworkspace
+*.project
+*.pytproject
+*.pytproject/*
+*.tmproj
+.tmproj/*
+*.sublime-project
+*.sublime-workspace
+
+# Compiled source files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.egg-info
+*.egg-info/
+*.pyc
+*.pyo
+*.pyz
+*.pyzw
+*.whl
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.gz
+*.bz2
+*.7z
+*.xpi
+*.xz
+*.tar
+*.tbz2
+*.txz
+*.tlz
+*.war
+*.jar
+*.whl
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp

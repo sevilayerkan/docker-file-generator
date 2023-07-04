@@ -6,7 +6,7 @@ This script generates a Docker Compose YAML file based on JSON configuration fil
 
 - Python 3.x
 
-## Usage
+## Usage for normal app
 
 1. Ensure you have Python 3.x installed on your system.
 
@@ -32,6 +32,16 @@ This script generates a Docker Compose YAML file based on JSON configuration fil
 
 5. The generated Docker Compose file can be used to deploy and manage your multi-container application using Docker Compose.
 
+### Example Usage
+
+```bash
+python dockerJson.py -j flask-psql.json flask-redis.json
+```
+
+```bash
+python dockerJson.py -j  templates/flask-psql.json templates/flask-redis.json -o ./result -f compose.yml
+```
+
 ## JSON Configuration File Format
 
 The JSON configuration files should follow a specific format to define the services and their attributes in the Docker Compose file.
@@ -54,15 +64,57 @@ Here's an example of a valid JSON configuration file:
 }
 ```
 
-## Usage
+## Usage for Flask Web App
 
-```bash
-python dockerJson.py -j flask-psql.json flask-redis.json
-```
+This is a Flask application that generates a Docker Compose YAML file based on JSON configuration files.
 
-```bash
-python dockerJson.py -j  templates/flask-psql.json templates/flask-redis.json -o ./result -f compose.yml
-```
+### Requirements
+
+- Python 3.6 or higher
+
+### Installation
+
+0. Clone repo in your device
+
+1. Navigate to the project directory:
+
+   ```shell
+   cd docker-file-generator
+   ```
+
+2. Create a virtual environment (optional but recommended):
+
+   ```shell
+   python3 -m venv venv
+   ```
+
+3. Install the required dependencies:
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+### Usage
+
+1. Place your JSON configuration files in the `json_templates` directory.  Each JSON file should contain the configuration for a Docker service like shown before. Or choose from OS file system in the browser.
+
+2. Run the Flask application:
+
+   ```shell
+   flask run
+   ```
+
+3. Open your web browser and go to `http://localhost:5000`.
+
+4. Select the JSON configuration files you want to include in the Docker Compose file.
+
+5. Specify the output directory and filename for the generated Docker Compose YAML file.
+
+6. Click the "Generate" button.
+
+7. The Docker Compose YAML file will be generated and saved in the specified output directory.
+
+8. After the file is generated, you will be redirected to a success page with a link to return to the generate page and generate another Docker Compose file.
 
 ## Notes
 
