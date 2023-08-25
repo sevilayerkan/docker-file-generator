@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    ports:
+      - 80:80
+    command: 
+
+  auth:
+    image: auth-service
+    ports:
+      - 8080:8080
+    command: 
+
+  user:
+    image: user-service
+    ports:
+      - 8081:8081
+    command: 
+
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    command: 
+
+  zookeeper:
+    image: zookeeper:latest
+    ports:
+      - 2181:2181
+    command: 
+
+  kafka:
+    image: kafka:latest
+    ports:
+      - 9092:9092
+    command: 
+
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    command: 
+
+  wordpress:
+    image: wordpress:5.7.2-php8.0-fpm-alpine
+    ports:
+      - 80:80
+    command: 
+
+  app:
+    image: app:latest
+    ports:
+      - 8080
+    command: 
+
