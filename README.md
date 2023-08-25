@@ -2,15 +2,18 @@
 
 This script generates a Docker Compose YAML file based on JSON configuration files. It simplifies the process of creating a Docker Compose file for managing multi-container applications.
 
+> ❗ **Disclaimer:** <br>
+ YAML files generated with this app might not be suitable for your production environment. Please use them after making proper adjustments.
+
 ## Requirements
 
 - Python 3.x
 
-## Usage for normal app
+## Usage for cli app
 
 1. Ensure you have Python 3.x installed on your system.
 
-2. Download the `dockerJson.py` script.
+2. Download the `dockerJson.py` script from /apps/fromJson directory.
 
 3. Run the script with the desired command-line options:
 
@@ -130,3 +133,14 @@ Supported service attributes include:
 You can define multiple services in a single JSON configuration file.
 
 Note that duplicate service names are not allowed. If a duplicate service name is detected, the script will skip the duplicate entry.
+
+## Screenshots
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1118270122449195088/1144752634947977318/image.png)
+![Success Page](https://cdn.discordapp.com/attachments/1118270122449195088/1144752636239810730/image.png)
+![Success Page with Warning](https://cdn.discordapp.com/attachments/1118270122449195088/1144752636541812827/image.png)
+
+
+## Contributing and Feedback
+
+Contributions are always welcome! If you have any feedback, please feel free to open issue or contact me in [@sevilayerkan](https://www.github.com/sevilayerkan)
