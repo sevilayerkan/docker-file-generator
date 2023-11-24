@@ -1,0 +1,21 @@
+{
+    "flask_app": {
+      "image": "tiangolo/uwsgi-nginx-flask:python3.8-alpine",
+      "ports": ["5000:80"],
+      "volumes": ["./app:/app"],
+      "environment": {
+        "MODULE_NAME": "app",
+        "VARIABLE_NAME": "app",
+        "FLASK_ENV": "production",
+        "NGINX_WORKER_PROCESSES": "1"
+      },
+      "command": ["uwsgi", "--http", "0.0.0.0:80", "--wsgi-file", "app.py", "--callable", "app", "--stats", "0.0.0.0:1717"]
+    },
+    "requirements": {
+      "image": "python:3.8-alpine",
+      "volumes": ["./app:/app"],
+      "command": ["pip", "install", "-r", "/app/requirements.txt"]
+    }
+  }
+  
+  
