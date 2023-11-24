@@ -11,6 +11,8 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 
 @app.route('/', methods=['GET', 'POST'])
+
+
 def index():
     if request.method == 'POST':
         json_files = request.form.getlist('json_files')
@@ -108,4 +110,4 @@ def generate_docker_compose(json_files, output_dir, output_filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
